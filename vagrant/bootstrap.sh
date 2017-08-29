@@ -21,7 +21,7 @@ tar xfz $GOREL
 mv go /usr/local/go
 rm -f $GOREL
 PATH=$PATH:/usr/local/go/bin
-echo 'PATH=$PATH:/usr/local/go/bin' >> /home/ubuntu/.bashrc
+echo 'PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
 
 # make/install quorum
 git clone https://github.com/jpmorganchase/quorum.git
@@ -37,8 +37,8 @@ wget -q https://github.com/jpmorganchase/quorum/releases/download/v1.2.0/porosit
 mv porosity /usr/local/bin && chmod 0755 /usr/local/bin/porosity
 
 # copy examples
-cp -r /vagrant/examples /home/ubuntu/quorum-examples
-chown -R ubuntu:ubuntu /home/ubuntu/quorum /home/ubuntu/quorum-examples
+cp -r /vagrant/examples ~/quorum-examples
+# chown -R ubuntu:ubuntu ~/quorum ~/quorum-examples
 
 # done!
 banner "Quorum"

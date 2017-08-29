@@ -1,5 +1,16 @@
 Vagrant.configure(2) do |config|
-  config.vm.box = "ubuntu/xenial64"
+  # config.vm.box = "ubuntu/xenial64"
+  config.vm.box = "digital_ocean"
+  config.vm.provider :digital_ocean do |provider, override|
+    provider.ssh_key_name = "KClough MBP"
+    override.ssh.private_key_path = '~/.ssh/id_rsa'
+    override.vm.box = 'digital_ocean'
+    override.vm.box_url = "https://github.com/devopsgroup-io/vagrant-digitalocean/raw/master/box/digital_ocean.box"
+    provider.token = 'f4b4793784a7ba62fc26234aa839a05bfa64b530b64da5785618634c8fce9b9f'
+    provider.image = 'ubuntu-16-04-x64'
+    provider.region = 'nyc3'
+    provider.size = '4gb'
+  end
   config.vm.provision :shell, path: "vagrant/bootstrap.sh"
   config.vm.network "forwarded_port", guest: 22000, host: 22000
   config.vm.network "forwarded_port", guest: 22001, host: 22001
