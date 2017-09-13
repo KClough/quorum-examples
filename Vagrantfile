@@ -6,7 +6,7 @@ Vagrant.configure(2) do |config|
     override.ssh.private_key_path = '~/.ssh/id_rsa'
     override.vm.box = 'digital_ocean'
     override.vm.box_url = "https://github.com/devopsgroup-io/vagrant-digitalocean/raw/master/box/digital_ocean.box"
-    provider.token = 'f4b4793784a7ba62fc26234aa839a05bfa64b530b64da5785618634c8fce9b9f'
+    provider.token = ''
     provider.image = 'ubuntu-16-04-x64'
     provider.region = 'nyc3'
     provider.size = '4gb'
